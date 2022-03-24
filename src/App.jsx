@@ -10,14 +10,15 @@ export function App() {
   ]);
   const todoTaskRef = useRef();
 
-  
+  //Cuando lo traemos la primera vez
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem(KEY));
     if(storedTodos){
       setTodos(storedTodos);
     }
   },[]);
-  
+
+  //Añadiendo
   useEffect(() => {
     localStorage.setItem(KEY, JSON.stringify(todos));
   }, [todos]);
